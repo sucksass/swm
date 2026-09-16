@@ -472,6 +472,8 @@ If you came here because you wanted a tiny X11 window manager built by an AI tha
 
 Welcome.
 
+---
+
 <h2 align="center">swm — Static Window Manager</h2><p align="center">
   Powered by X11.<br>
   Fueled by C.<br>
