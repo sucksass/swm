@@ -6,7 +6,7 @@
   <img src="screenshot.png" alt="SWM screenshot">
 </p>---
 
-What is SWM?
+What is SWM? (expect some ai cringe humor)
 
 "swm" (Static Window Manager) is a small, fast, configurable X11 window manager built around traditional Xlib interfaces, configurable tags, tiling and monocle layouts, floating windows, fullscreen support, multi-monitor support, and ICCCM/EWMH behavior.
 
