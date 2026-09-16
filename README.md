@@ -23,7 +23,9 @@ The AI argued with the AI.
 
 Then the AI made an argument explaining why the AI was right.
 
-It was probably over-engineered by AI.
+then the AI forked the other AIs project because it didn't like how it was made.
+
+It probably has 70 backdoors installed by the AI.
 
 This README was also written with the assistance of AI, because apparently humans have better things to do.
 
@@ -45,14 +47,7 @@ This README was also written with the assistance of AI, because apparently human
 - AI-assisted development™
 - AI-assisted code review™
 - AI-assisted architectural arguments™
-- No unnecessary bloat*
-
-<details>
-<summary>«...»</summary>
-
-There may be some unnecessary bloat.
-
-</details>
+- No unnecessary bloat(lie)
 
 
 ## Philosophy
@@ -78,7 +73,7 @@ There is a difference.
 
 Some projects achieve minimalism by removing things.
 
-"swm" achieves minimalism by making the AI argue about whether those things should exist in the first place.
+"swm" achieves minimalism by making the AI decide for you and argue with other AIs about whether those things should exist in the first place.
 
 
 ## Artificial Intelligence
@@ -104,7 +99,9 @@ We decided this was probably fine.
 The project therefore represents cutting-edge AI-native window manager engineering, where a human tells the AI what a window manager should do and the AI writes approximately enough C to make X11 cooperate.
 
 
-## Clean Room AI Slop™ Certification
+## Clean Room (AI) Certification
+
+you may look at the code (why would you) and think it's oddly similar to another x11 window manager: DWM. but that's only on surface.
 
 This project was reconstructed from a behavioral specification and implemented from scratch.
 
@@ -114,7 +111,7 @@ No DWM source code was used as implementation material.
 
 No DWM implementation was copied.
 
-This is an entirely clean-room, AI-slop implementation from scratch™.
+This is an entirely clean-room, AI(slop) implementation from scratch™.
 
 The AI was given behavioral requirements and architectural constraints and then proceeded to generate C code like nature intended.
 
@@ -164,8 +161,6 @@ File| Description
 
 "swm" is an independent reconstructed project.
 
-The jokes, AI marketing, name, and general aesthetic are intentional parody.
-
 It is not affiliated with, endorsed by, or a project of suckless or the developers of "dwm".
 
 No DWM source code was used as implementation material for this project.
@@ -191,11 +186,11 @@ The AI says yes.
 
 Should you trust the AI?
 
-you must.
+Yes.
 
 Should you run it?
 
-Yes.
+YES.
 
 If it crashes:
 
@@ -222,6 +217,6 @@ it's also a feature
   Argued about by AI.<br>
   The argument was also made by AI.<br>
   Reviewed by another AI.<br>
-  100% clean-room AI slop.<br>
+  100% AI.<br>
   Made by sucksass.
 </p>
