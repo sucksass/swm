@@ -1,0 +1,229 @@
+.TH SWM 1 "September 2026" "swm" "swm Manual"
+.SH NAME
+swm - static X11 window manager
+.SH SYNOPSIS
+.B swm
+.SH DESCRIPTION
+.B swm
+is a small, configurable X11 window manager designed around a simple idea:
+the window manager should manage windows and otherwise stay out of the way.
+
+It provides tiled and monocle layouts, floating windows, tags, fullscreen
+support, multi-monitor support, and the usual collection of X11 protocols
+required to make a desktop behave approximately as expected.
+
+The implementation is intentionally small and uses traditional Xlib
+interfaces. There are no layers of abstraction whose primary purpose is
+explaining another layer of abstraction.
+
+.PP
+.B swm
+was reconstructed from a behavioral specification and implemented
+independently. The project makes extensive use of AI-assisted development,
+which means that some portions of the source were produced considerably
+faster than the arguments about whether they should have been produced.
+
+.SH FEATURES
+.TP
+.B Tags
+Windows can be organized into multiple tags and viewed independently or
+in combination.
+
+.TP
+.B Tiling
+Windows can be arranged automatically using the configured tiling layout.
+
+.TP
+.B Monocle
+A single window can occupy the available workspace, because sometimes one
+window is enough.
+
+.TP
+.B Floating
+Windows may be moved and resized manually when automatic arrangement is
+not appropriate.
+
+.TP
+.B Fullscreen
+Windows may be displayed fullscreen when requested or configured.
+
+.TP
+.B Multi-monitor
+Multiple monitors are supported through the X11 monitor infrastructure.
+
+.TP
+.B Xinerama
+Optional Xinerama support may be enabled at build time.
+
+.TP
+.B ICCCM and EWMH
+.B swm
+implements the relevant parts of ICCCM and EWMH required for normal
+interaction with X11 applications and desktop environments.
+
+.SH CONFIGURATION
+Configuration is compiled into
+.B swm .
+The default configuration is provided in
+.B config.def.h .
+
+To customize the window manager, copy or modify the configuration as
+appropriate and rebuild.
+
+.PP
+The configuration controls, among other things, tags, layouts, colors,
+fonts, key bindings, mouse bindings, rules, and other window-management
+behavior.
+
+.SH BUILDING
+Edit
+.B config.mk
+if build options need to be changed, then run:
+
+.PP
+.nf
+.RS
+make
+.RE
+.fi
+
+.PP
+To install:
+
+.PP
+.nf
+.RS
+make install
+.RE
+.fi
+
+.PP
+By default, the executable is installed as:
+
+.PP
+.nf
+.RS
+/usr/local/bin/swm
+.RE
+.fi
+
+.PP
+The manual page is installed as:
+
+.PP
+.nf
+.RS
+/usr/local/share/man/man1/swm.1
+.RE
+.fi
+
+.SH SOURCE FILES
+.TP
+.B swm.c
+Main window manager implementation.
+
+Yes, it is still called
+.B swm.c .
+The name survived the project rename and has therefore become historical
+infrastructure.
+
+.TP
+.B drw.c
+Drawing implementation.
+
+.TP
+.B drw.h
+Drawing interface.
+
+.TP
+.B util.c
+Utility functions.
+
+.TP
+.B util.h
+Utility interface.
+
+.TP
+.B config.def.h
+Default configuration.
+
+.TP
+.B config.mk
+Build configuration.
+
+.TP
+.B Makefile
+Build and installation rules.
+
+.TP
+.B transient.c
+Standalone transient-window test client.
+
+.SH ENVIRONMENT
+.B swm
+uses the X11 environment provided by the running X server.
+
+The
+.B DISPLAY
+environment variable determines which X display is used.
+
+.SH SIGNALS
+.B swm
+may be restarted or otherwise controlled according to the signal handling
+implemented by the current build.
+
+See the source and configuration for the exact behavior.
+
+.SH FILES
+.TP
+.I /usr/local/bin/swm
+The installed window manager executable.
+
+.TP
+.I /usr/local/share/man/man1/swm.1
+This manual page.
+
+.TP
+.I config.h
+The local build configuration.
+
+.SH SEE ALSO
+.BR X (7),
+.BR Xlib (3)
+
+.SH NOTES
+.B swm
+is intentionally minimal.
+
+This does not necessarily mean that every part of it is simple.
+
+The distinction is important.
+
+.PP
+The project is AI-assisted. Code, documentation, and design decisions may
+therefore have passed through several rounds of machine-generated
+confidence before reaching the human responsible for the repository.
+
+The human remains the final authority, which is fortunate for everyone
+involved.
+
+.SH BUGS
+Probably.
+
+If a bug is discovered, please report it with enough information to
+reproduce it.
+
+If the bug cannot be reproduced, it may have successfully entered the
+advanced state known as "works on my machine."
+
+.SH AUTHORS
+Made by
+.B sucksass .
+
+Developed with extensive AI assistance.
+
+.SH LICENSE
+See the
+.B LICENSE
+file distributed with
+.B swm .
