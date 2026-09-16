@@ -1224,8 +1224,14 @@ swm_insert_client(Client *c)
 
     if (!c || !(m = c->mon))
         return;
-    c->next = m->clients;
-    m->clients = c;
+    if (!m->clients) {
+        m->clients = c;
+    } else {
+        Client *last = m->clients;
+        while (last->next)
+            last = last->next;
+        last->next = c;
+    }
     c->snext = m->stack;
     m->stack = c;
     if (!m->sel)
