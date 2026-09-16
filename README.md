@@ -2,7 +2,12 @@
   <strong>swm (previously wewm), the best window manager made by sucksass!</strong>
 </p>A tiny, fast, configurable X11 window manager built with the revolutionary philosophy of:
 
-«««Why make something complicated when you can make it confusing instead?»»»
+<details>
+<summary>«««...»»»</summary>
+
+Why make something complicated when you can make it confusing instead?
+
+</details>
 
 Now featuring AI™ technology, machine-generated engineering™, artificial intelligence™, neural vibes™, and an unreasonable amount of confidence.
 
@@ -24,7 +29,7 @@ This README was also written with the assistance of AI, because apparently human
 
 ---
 
-Features
+## Features
 
 - X11 window management
 - Multiple tags
@@ -43,11 +48,16 @@ Features
 - AI-assisted architectural arguments™
 - No unnecessary bloat*
 
-«There may be some unnecessary bloat.»
+<details>
+<summary>«...»</summary>
+
+There may be some unnecessary bloat.
+
+</details>
 
 ---
 
-Artificial Intelligence
+## Artificial Intelligence
 
 "swm" proudly embraces the future of software development:
 
@@ -71,7 +81,7 @@ The project therefore represents cutting-edge AI-native window manager engineeri
 
 ---
 
-Building
+## Building
 
 Edit "config.mk" if you want to change the build configuration, then:
 
@@ -91,7 +101,7 @@ The manual page is installed as:
 
 ---
 
-Configuration
+## Configuration
 
 The default configuration is provided in:
 
@@ -113,7 +123,7 @@ The AI has accepted this.
 
 ---
 
-Files
+## Files
 
 File| Description
 "wewm.c"| Main window manager implementation
@@ -129,17 +139,27 @@ File| Description
 
 ---
 
-The Name
+## The Name
 
 The project was originally called wewm.
 
 The new name is:
 
-««swm — Static Window Manager»»
+<details>
+<summary>««...»»</summary>
+
+swm — Static Window Manager
+
+</details>
 
 Previously:
 
-««wewm — Worst Ever Window Manager»»
+<details>
+<summary>««...»»</summary>
+
+wewm — Worst Ever Window Manager
+
+</details>
 
 Yes.
 
@@ -157,7 +177,7 @@ It isn't.
 
 ---
 
-Philosophy
+## Philosophy
 
 "swm" follows a simple philosophy:
 
@@ -184,7 +204,7 @@ Some projects achieve minimalism by removing things.
 
 ---
 
-Clean Room AI Slop™ Certification
+## Clean Room AI Slop™ Certification
 
 This project was reconstructed from a behavioral specification and implemented from scratch.
 
@@ -207,7 +227,7 @@ Any similarities to conventional minimalist X11 window-manager architecture are 
 
 ---
 
-Disclaimer
+## Disclaimer
 
 "swm" is an independent reconstructed project.
 
@@ -219,7 +239,7 @@ No DWM source code was used as implementation material for this project.
 
 ---
 
-Final Words
+## Final Words
 
 Was it necessary to make another X11 window manager?
 
@@ -247,11 +267,21 @@ Probably.
 
 If it crashes:
 
-«««It's a feature.»»»
+<details>
+<summary>«««...»»»</summary>
+
+It's a feature.
+
+</details>
 
 If it doesn't:
 
-«««The AI has achieved enlightenment.»»»
+<details>
+<summary>«««...»»»</summary>
+
+The AI has achieved enlightenment.
+
+</details>
 
 ---
 
