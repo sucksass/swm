@@ -6,7 +6,7 @@
   <img src="screenshot.png" alt="SWM screenshot">
 </p>---
 
-What is SWM? (expect some ai cringe humor)
+What is SWM?
 
 "swm" (Static Window Manager) is a small, fast, configurable X11 window manager built around traditional Xlib interfaces, configurable tags, tiling and monocle layouts, floating windows, fullscreen support, multi-monitor support, and ICCCM/EWMH behavior.
 
@@ -67,7 +67,7 @@ Build configuration can be changed in "config.mk".
 
 Configuration lives in "config.def.h".
 
-Because apparently editing C source code is still a perfectly reasonable configuration system.
+Because apparently editing C source code is still a perfectly reasonable configuration system. (expect some more cringe ai humor down)
 
 ---
 
