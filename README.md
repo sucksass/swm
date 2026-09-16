@@ -29,8 +29,6 @@ This README was also written with the assistance of AI, because apparently human
 
 ---
 
----
-
 ## Features
 
 - X11 window management
@@ -56,8 +54,6 @@ This README was also written with the assistance of AI, because apparently human
 There may be some unnecessary bloat.
 
 </details>
-
----
 
 ---
 
@@ -88,8 +84,6 @@ Some projects achieve minimalism by removing things.
 
 ---
 
----
-
 ## Artificial Intelligence
 
 "swm" proudly embraces the future of software development:
@@ -111,8 +105,6 @@ Then we had a discussion about whether the review of the review was sufficiently
 We decided this was probably fine.
 
 The project therefore represents cutting-edge AI-native window manager engineering, where a human tells the AI what a window manager should do and the AI writes approximately enough C to make X11 cooperate.
-
----
 
 ---
 
@@ -139,8 +131,6 @@ Any similarities to conventional minimalist X11 window-manager architecture are 
 
 ---
 
----
-
 ## Building
 
 Edit "config.mk" if you want to change the build configuration, then:
@@ -161,29 +151,6 @@ The manual page is installed as:
 
 ---
 
----
-
-## Configuration
-
-The default configuration is provided in:
-
-config.def.h
-
-The main implementation remains in:
-
-swm.c
-
-Yes, the source file is still called "swm.c".
-
-No, we're not changing it.
-
-It's historical now.
-
-The AI has been informed.
-
-The AI has accepted this.
-
----
 
 ---
 
@@ -239,11 +206,11 @@ The AI says yes.
 
 Should you trust the AI?
 
-Absolutely not.
+you must.
 
-Should you run it anyway?
+Should you run it?
 
-Probably.
+Yes.
 
 If it crashes:
 
@@ -259,7 +226,7 @@ If it doesn't:
 <details>
 <summary>«««...»»»</summary>
 
-The AI has achieved enlightenment.
+it's also a feature
 
 </details>
 
