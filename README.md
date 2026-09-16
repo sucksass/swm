@@ -27,7 +27,6 @@ It was probably over-engineered by AI.
 
 This README was also written with the assistance of AI, because apparently humans have better things to do.
 
----
 
 ## Features
 
@@ -55,7 +54,6 @@ There may be some unnecessary bloat.
 
 </details>
 
----
 
 ## Philosophy
 
@@ -82,7 +80,6 @@ Some projects achieve minimalism by removing things.
 
 "swm" achieves minimalism by making the AI argue about whether those things should exist in the first place.
 
----
 
 ## Artificial Intelligence
 
@@ -106,7 +103,6 @@ We decided this was probably fine.
 
 The project therefore represents cutting-edge AI-native window manager engineering, where a human tells the AI what a window manager should do and the AI writes approximately enough C to make X11 cooperate.
 
----
 
 ## Clean Room AI Slop™ Certification
 
@@ -129,7 +125,6 @@ Any similarities to conventional minimalist X11 window-manager architecture are 
 - C being C;
 - and the AI having approximately 14 billion opinions about pointers.
 
----
 
 ## Building
 
@@ -149,10 +144,6 @@ The manual page is installed as:
 
 /usr/local/share/man/man1/swm.1
 
----
-
-
----
 
 ## Files
 
@@ -168,9 +159,6 @@ File| Description
 "swm.1"| Manual page
 "transient.c"| Standalone transient-window test client
 
----
-
----
 
 ## Disclaimer
 
@@ -182,9 +170,6 @@ It is not affiliated with, endorsed by, or a project of suckless or the develope
 
 No DWM source code was used as implementation material for this project.
 
----
-
----
 
 ## Final Words
 
