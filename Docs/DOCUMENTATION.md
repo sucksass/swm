@@ -56,7 +56,7 @@ Their responsibilities are:
 | `README.md` | Project introduction |
 | `CLEANROOM.md` | Clean-room development/review history |
 
-`wewm.c` is also present in the archive, but it is not part of the normal `SRC` list in the current Makefile. It should therefore be treated as a repository artifact/parallel implementation, not as code compiled into the current `swm` executable.
+Earlier versions of this document referenced a `wewm.c` file as a repository artifact not compiled by the Makefile. As of the tree inspected on 2026-09-26, no such file exists anywhere in the archive - the reference was stale and has been removed here. If `wewm.c` still exists in your working repository outside this archive, this note doesn't apply to it; it only reflects what ships in `swm.zip`.
 
 ---
 
@@ -406,6 +406,8 @@ At startup, existing windows are scanned. New windows enter through the X event 
 
 Management creates client state, reads relevant X properties, applies classification, assigns the client to a monitor and tag set, selects required X events, and inserts the client into the monitor's structures.
 
+Insertion places the new client at the head of both the monitor's client list and its focus stack, not the tail. Because the tiled layout always fills the master slot(s) from the head of the client list, this is what makes a newly mapped window become master - pushing whatever previously held that slot down into the stack - rather than appearing silently at the bottom. (As of 2026-09-26; an earlier revision of this tree appended instead, so new windows landed at the bottom of the stack until this was corrected. See `CLEANROOM.md`.)
+
 ### Visibility and mapping
 
 A client is mapped when it should be visible under the current monitor/view/layout state.
@@ -416,9 +418,9 @@ When geometry changes, the WM sends the appropriate X11 configuration to the cli
 
 ### Unmanagement
 
-When a client is withdrawn or destroyed, its internal state and X11 relationships are removed.
+When a client is withdrawn or destroyed, its internal state and X11 relationships are removed, the affected monitor is rearranged, and focus falls back to the next visible client in that monitor's focus stack (or to none, if it was the last one) rather than being left pointing at a client that no longer exists.
 
-The `UnmapNotify` path is particularly important because a window being temporarily unmapped is not always equivalent to a client disappearing permanently. Confusing those states can leave a stale client object behind.
+The `UnmapNotify` path is particularly important because a window being temporarily unmapped is not always equivalent to a client disappearing permanently. Confusing those states can leave a stale client object behind. As of 2026-09-26 this is handled explicitly: a *synthetic* `UnmapNotify` (`send_event` set, meaning the client itself is announcing an ICCCM state change) only updates the client's recorded window state, while a real `UnmapNotify` is treated as the window actually being gone and goes through the same teardown as `DestroyNotify`. Earlier revisions of this tree had no `UnmapNotify` handler registered in the event dispatch table at all - any client that unmapped itself without being destroyed would have stayed in the layout indefinitely as a phantom client. That gap is closed as of this revision; see `CLEANROOM.md` for how it was found.
 
 ---
 
@@ -727,7 +729,7 @@ A type or subsystem can exist without being exercised by the current configurati
 
 ### Repository artifacts are not executable components
 
-`wewm.c` exists in the archive but is not compiled by the current Makefile.
+`transient.c` is the one file in this tree that fits that description: it exists in the archive and is a real, buildable program, but it is a standalone test client, not part of the `swm` binary. (An earlier revision of this document cited `wewm.c` for the same point; that file is not present in the tree inspected on 2026-09-26 and the reference has been removed.)
 
 ### Protocol support is not universal desktop support
 

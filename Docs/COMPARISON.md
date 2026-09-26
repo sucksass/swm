@@ -19,7 +19,8 @@ Both projects are X11 window managers built around the same fundamental problem:
 | Floating clients | Yes | Yes |
 | Tags/views | Yes | Yes |
 | Multi-monitor | Yes | Yes |
-| Keyboard/mouse actions | Yes | Yes |
+| Keyboard/mouse action *functions* | Yes | Yes |
+| Keyboard/mouse actions *bound by default* | ~28 keys covering spawn, focus-stack, mfact, zoom, kill, quit, tag view, monitor focus | 9 keys (tag view only) + 5 mouse bindings; no default spawn/launch binding at all |
 | ICCCM/EWMH | Yes | Yes |
 | Xft drawing | Yes | Yes |
 | Xinerama | Yes | Optional/current build support |
@@ -284,6 +285,8 @@ choose
   -> update X11
 ```
 
+**Update, 2026-09-26:** this section previously implied that "resulting behavior" without qualification, which glossed over a real divergence that existed until this revision. dwm attaches a newly mapped client to the *head* of the client list, and the tiled layout fills its master slot(s) from that head - so a new window becomes master, displacing whatever held that slot before it. swm's insertion function instead walked to the *tail* and appended, so a new window landed at the bottom of the stack and never touched master unless explicitly zoomed there. That is a genuine behavioral difference, not an architectural restyling of an equivalent outcome, and it has been fixed to match dwm's ordering. The lesson generalizes: the abstraction-level differences catalogued throughout this document (`Geometry`, `EventDispatch`, and so on) are the interesting comparison when the underlying behavior actually matches; they are not a substitute for checking that it does.
+
 swm just puts more names between those verbs.
 
 ---
@@ -485,7 +488,7 @@ That is evidence about the development process, not proof that the resulting dra
 
 dwm explicitly embraces source-level configuration. The official documentation describes customizing the WM by editing its C configuration and rebuilding. citeturn0search0
 
-swm does the same.
+swm does the same for appearance values (font, colors, border width, bar placement) - those genuinely flow from `config.def.h` through to `swm.c`. Keybindings, mouse bindings, rules, tags, and layout selection do not: `config.def.h`'s own comments state plainly that those tables exist in `swm.c` (`swm_keys[]`, `swm_buttons[]`, the `Rule` table) but are not wired to anything in the config header, and the tables `swm.c` actually ships with are populated directly and sparsely - 9 keybindings (tag-view only, no spawn/launch binding) versus dwm's roughly 28 defaults. So "edit `config.def.h` and rebuild" is accurate for appearance and inaccurate for behavior; changing swm's default keybindings currently means editing `swm_keys[]` in `swm.c` directly, not `config.def.h`.
 
 So the comparison is not:
 

@@ -151,8 +151,24 @@ accepted components, so the Implementer could extend the existing file
 rather than starting over. The result was reviewed function-by-function
 against that spec. One real bug was found (`UnmapNotify` was never wired
 into the event dispatch table, meaning a withdrawn-but-not-destroyed
-window would leak as a phantom client) and needed a fix; everything else
-held up.
+window would leak as a phantom client) and a fix was written; everything
+else held up.
+
+**Correction, added 2026-09-26.** Independent inspection of the archived
+source tree found `UnmapNotify` still absent from the dispatch table -
+the fix described above did not make it into what was actually shipped
+in this archive, despite being written and recorded as done at the time.
+The same inspection also found a second, previously undocumented
+behavioral gap: new clients were being appended to the *tail* of the
+client list rather than the head, so a newly mapped window never became
+master the way the reference behavior requires - it silently landed at
+the bottom of the stack instead. Both have since been fixed directly
+against this source (not against the reference implementation) and the
+dispatch table now carries all 14 handlers the original spec called for.
+This is left here rather than quietly corrected in place, in keeping
+with the rest of this document: a clean-room process that hides its own
+after-the-fact discoveries is worth exactly as little as one that hides
+its rejections.
 
 ## What this did and didn't prove
 
@@ -165,9 +181,12 @@ good intentions, even when the resulting code turns out fine) breaks the
 chain of evidence, not just the vibes.
 
 It didn't prove the resulting code is bug-free (see: the `UnmapNotify`
-gap, caught only because someone happened to check for it explicitly), and
-it didn't prove anything about performance, security, or production
-readiness. It also isn't a rigorous study . one target, an inconsistent
+gap - caught in review, but the fix didn't survive into the archived
+source, and it took a second, independent check months later to notice
+that; plus the attach-order gap, which nobody caught during the original
+process at all), and it didn't prove anything about performance,
+security, or production readiness. It also isn't a rigorous study . one
+target, an inconsistent
 number of models and sessions involved, no control group, and at least
 one process gap partway through. Take the conclusions as "this seems to
 work when followed" rather than as a validated methodology.
