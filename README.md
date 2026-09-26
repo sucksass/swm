@@ -107,13 +107,7 @@ That's the nature of the territory.
 
 **It's still SWM.**
 
-## License
 
-SWM is licensed under the [MIT License](LICENSE).
-
-See [`LICENSE`](LICENSE) for the full license text.
-
----
 
 <div align="center">
 
